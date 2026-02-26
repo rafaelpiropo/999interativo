@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>999 Interativo - Loja Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-game {
+            font-family: 'LuckiestGuy', cursive;
+            letter-spacing: 2px;
+        }
+        .neon-text {
+            text-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24;
+        }
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @keyframes pulse-gold {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(251, 191, 36, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+        }
+        .pulse-button {
+            animation: pulse-gold 2s infinite;
+        }
+        .plan-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-color: #fbbf24;
+        }
+        input:focus {
+            outline: 2px solid #fbbf24;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header -->
+    <header class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <h1 class="font-game text-3xl text-yellow-400 neon-text">999 INTERATIVO</h1>
+        <nav>
+            <a href="#planos" class="hover:text-yellow-400 transition font-semibold">PLANOS</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-12 text-center">
+        <div class="mb-8 inline-block p-2 bg-yellow-400 text-slate-900 font-bold rounded-full px-6 animate-bounce">
+            PROMOÇÃO EARLY ACCESS DISPONÍVEL! 🚀
+        </div>
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">Domine o Mapa com <br><span class="text-yellow-400">Chaves Exclusivas</span></h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Tenha acesso a comandos especiais, auras lendárias e controle total sobre a sua jornada no obby mais interativo do Roblox.</p>
+        
+        <!-- Game Image Placeholder -->
+        <div class="w-full max-w-4xl mx-auto h-64 md:h-96 rounded-3xl overflow-hidden border-4 border-yellow-400/20 shadow-2xl relative">
+            <img src="https://via.placeholder.com/1200x600/1e293b/fbbf24?text=FOTO+DO+JOGO+999+INTERATIVO" 
+                 alt="Preview do Jogo" 
+                 class="w-full h-full object-cover"
+                 onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=1200'">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="planos" class="max-w-6xl mx-auto px-6 py-20">
+        <h3 class="font-game text-4xl text-center mb-16">ESCOLHA SEU ACESSO</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Plan 3 Days -->
+            <div class="plan-card glass p-8 rounded-3xl flex flex-col text-center border border-white/5">
+                <span class="text-slate-400 font-bold text-sm mb-4">INICIANTE</span>
+                <h4 class="text-2xl font-bold mb-2">03 DIAS</h4>
+                <div class="text-4xl font-extrabold text-yellow-400 mb-6 font-game">R$ 20</div>
+                <ul class="text-sm text-slate-400 space-y-3 mb-8 flex-grow">
+                    <li>✓ Acesso a todos os atalhos</li>
+                    <li>✓ Auras de Nível 1 e 2</li>
+                    <li>✓ Suporte básico</li>
+                </ul>
+                <button onclick="openModal('03 Dias', 'R$ 20')" class="bg-slate-700 hover:bg-slate-600 py-3 rounded-xl font-bold transition">SELECIONAR</button>
+            </div>
+
+            <!-- Plan 30 Days -->
+            <div class="plan-card glass p-8 rounded-3xl flex flex-col text-center border border-white/5 relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-xs font-black py-1 px-3 rounded-full">MAIS POPULAR</div>
+                <span class="text-slate-400 font-bold text-sm mb-4">AVANÇADO</span>
+                <h4 class="text-2xl font-bold mb-2">30 DIAS</h4>
+                <div class="text-4xl font-extrabold text-yellow-400 mb-6 font-game">R$ 80</div>
+                <ul class="text-sm text-slate-400 space-y-3 mb-8 flex-grow">
+                    <li>✓ Tudo do Iniciante</li>
+                    <li>✓ Auras Neon Exclusivas</li>
+                    <li>✓ Badge de Apoiador</li>
+                </ul>
+                <button onclick="openModal('30 Dias', 'R$ 80')" class="bg-yellow-400 text-black py-3 rounded-xl font-bold pulse-button transition">COMPRAR AGORA</button>
+            </div>
+
+            <!-- Plan 90 Days -->
+            <div class="plan-card glass p-8 rounded-3xl flex flex-col text-center border border-white/5">
+                <span class="text-slate-400 font-bold text-sm mb-4">MESTRE</span>
+                <h4 class="text-2xl font-bold mb-2">90 DIAS</h4>
+                <div class="text-4xl font-extrabold text-yellow-400 mb-6 font-game">R$ 220</div>
+                <ul class="text-sm text-slate-400 space-y-3 mb-8 flex-grow">
+                    <li>✓ Tudo do Avançado</li>
+                    <li>✓ Prioridade em Eventos</li>
+                    <li>✓ Comandos VIP</li>
+                </ul>
+                <button onclick="openModal('90 Dias', 'R$ 220')" class="bg-slate-700 hover:bg-slate-600 py-3 rounded-xl font-bold transition">SELECIONAR</button>
+            </div>
+
+            <!-- Plan 180 Days -->
+            <div class="plan-card glass p-8 rounded-3xl flex flex-col text-center border-yellow-400/50 bg-yellow-400/5">
+                <span class="text-yellow-400 font-bold text-sm mb-4">LENDÁRIO</span>
+                <h4 class="text-2xl font-bold mb-2">180 DIAS</h4>
+                <div class="text-4xl font-extrabold text-yellow-400 mb-6 font-game">R$ 400</div>
+                <ul class="text-sm text-slate-400 space-y-3 mb-8 flex-grow">
+                    <li>✓ Acesso Máximo</li>
+                    <li>✓ Todas as Auras Atuais</li>
+                    <li>✓ Canal Exclusivo no Discord</li>
+                </ul>
+                <button onclick="openModal('180 Dias', 'R$ 400')" class="bg-yellow-500 text-black py-3 rounded-xl font-bold transition hover:bg-yellow-400">OBTER AGORA</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div id="orderModal" class="fixed inset-0 bg-black/90 flex items-center justify-center p-6 z-50 hidden">
+        <div class="glass w-full max-w-md p-8 rounded-3xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
+            
+            <h5 class="text-2xl font-bold mb-2">Finalizar Pedido</h5>
+            <p id="selectedPlanText" class="text-yellow-400 font-bold mb-6 italic">Plano: ---</p>
+
+            <form id="purchaseForm" class="space-y-4">
+                <div>
+                    <label class="text-xs font-bold text-slate-500 uppercase">Nome Completo</label>
+                    <input type="text" id="name" required class="w-full bg-slate-800 border-none p-3 rounded-xl text-white">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs font-bold text-slate-500 uppercase">Nick Roblox</label>
+                        <input type="text" id="nick" required class="w-full bg-slate-800 border-none p-3 rounded-xl text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-slate-500 uppercase">ID Roblox</label>
+                        <input type="text" id="robloxId" required class="w-full bg-slate-800 border-none p-3 rounded-xl text-white">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-500 uppercase">E-mail</label>
+                    <input type="email" id="email" required class="w-full bg-slate-800 border-none p-3 rounded-xl text-white">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-500 uppercase">WhatsApp</label>
+                    <input type="tel" id="whatsapp" required placeholder="(00) 00000-0000" class="w-full bg-slate-800 border-none p-3 rounded-xl text-white">
+                </div>
+
+                <button type="submit" class="w-full bg-yellow-400 text-black py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition mt-4">
+                    ENVIAR PEDIDO VIA WHATSAPP
+                </button>
+                <p class="text-[10px] text-slate-500 text-center uppercase">Ao clicar, você será redirecionado para concluir o pagamento.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-slate-500 text-sm border-t border-white/5">
+        <p>© 2026 999 Interativo - Todos os direitos reservados.</p>
+        <p class="mt-2">Não temos afiliação oficial com a Roblox Corporation.</p>
+    </footer>
+
+    <script>
+        let currentPlan = "";
+        let currentPrice = "";
+
+        // Troque o número abaixo pelo SEU WHATSAPP (com código de área e país)
+        const MEU_WHATSAPP = "5571986950984"; 
+
+        function openModal(plan, price) {
+            currentPlan = plan;
+            currentPrice = price;
+            document.getElementById('selectedPlanText').innerText = `Plano: ${plan} - ${price}`;
+            document.getElementById('orderModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+        }
+
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userData = {
+                name: document.getElementById('name').value,
+                nick: document.getElementById('nick').value,
+                id: document.getElementById('robloxId').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('whatsapp').value
+            };
+
+            // Formatação da mensagem para o WhatsApp
+            const message = `🚀 *NOVO PEDIDO - 999 INTERATIVO* 🚀\n\n` +
+                          `*Plano:* ${currentPlan} (${currentPrice})\n` +
+                          `----------------------------\n` +
+                          `👤 *Cliente:* ${userData.name}\n` +
+                          `🎮 *Nick:* ${userData.nick}\n` +
+                          `🆔 *Roblox ID:* ${userData.id}\n` +
+                          `📧 *E-mail:* ${userData.email}\n` +
+                          `📱 *WhatsApp:* ${userData.phone}\n` +
+                          `----------------------------\n` +
+                          `📌 *Status:* Aguardando Pagamento`;
+
+            const encodedMsg = encodeURIComponent(message);
+            const waLink = `https://wa.me/${MEU_WHATSAPP}?text=${encodedMsg}`;
+
+            // Abre o WhatsApp
+            window.open(waLink, '_blank');
+            closeModal();
+            
+            // Aqui você poderia também integrar com uma planilha via Google Apps Script se quisesse algo mais robusto.
+            // Para atendimento via Whats é o caminho mais direto.
+        });
+    </script>
+</body>
+</html>
